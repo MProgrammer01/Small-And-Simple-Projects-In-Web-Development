@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+*{
+    @apply m-0 p-0 box-border;
+}
+
+body{
+    @apply font-sans bg-[#fff372] 
+    flex justify-center items-center h-screen;
+}
+
+.Container{
+    @apply w-[400px] bg-white py-5 px-2.5 rounded-[10px] 
+    shadow-[0_4px_8px_rgba(0,0,0,0.1)] text-center;
+}
+
+.title-of-quize, .status-of-quize{
+    @apply text-2xl text-orange-600 mb-2.5 font-bold;
+}
+
+.simple-paragraph{
+    @apply text-black mb-5;
+}
+
+.btn-start{
+    @apply bg-orange-500 text-white border-none py-2.5
+    px-5 rounded-[5px] text-base cursor-pointer;
+}
+
+.Question-Title{
+    @apply text-xl mb-4 font-bold;
+}
+
+.Number-Quize-And-Score{
+    @apply flex justify-between mb-5;
+}
+
+.Number-Quize-And-Score > h4{
+    @apply text-[10px];
+}
+
+.Reponse{
+    @apply bg-[#fff170] p-2.5 my-2.5 rounded-[5px]
+    cursor-pointer text-left border border-[burlywood];
+}
+
+.Progress-container{
+    @apply bg-[#fff170] w-full max-w-[400px]
+    rounded-[10px] overflow-hidden h-[5px] cursor-default;
+}
+
+.Progress-bar {
+    @apply h-full w-[60%] bg-orange-500;
+}
+
+.Success-question{
+    @apply bg-[#8cfc8f] border-green-500;
+}
+
+.Wrong-question{
+    @apply bg-[#ff6a6a] border-red-500;
+}
+
+.Final-Result-Container{
+    @apply bg-[#ffec45] rounded-[20px] py-5 px-0
+    mb-2.5;
+}
+
+.status-of-quize{
+    @apply mb-0;
+}
