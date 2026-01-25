@@ -1,0 +1,89 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #4cffff;
+}
+
+.Container {
+  width: 40%;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-weight: bold;
+  border-bottom: 2px solid #4c9aff;
+  padding-bottom: 10px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 50px;
+  background-color: #4c9aff;
+  color: white;
+  transition: background-color 0.3s;
+  margin-bottom: 20px;
+}
+
+button:hover {
+  background-color: #357ae8;
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+.palette {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+}
+
+p {
+  text-align: end;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.divColorBox {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.divColorBox:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+}
+
+.divHexColor {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2px;
+}
+
+.divHexColor i {
+  cursor: pointer;
+  font-size: 20px;
+  color: #333;
+}
+
+.divColor {
+  height: 120px;
+  cursor: pointer;
+}
