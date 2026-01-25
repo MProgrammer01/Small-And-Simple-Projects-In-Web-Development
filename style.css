@@ -1,0 +1,107 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff372;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.Container {
+  width: 400px;
+  background-color: #ffffff;
+  padding: 20px 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+.title-of-quize, .status-of-quize {
+  font-size: 1.5rem;
+  color: orangered;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.simple-paragraph {
+  color: black;
+  margin-bottom: 20px;
+}
+
+.btn-start {
+  background-color: orangered;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.Question-Title {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.Number-Quize-And-Score {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.Number-Quize-And-Score > h4 {
+  font-size: 10px;
+}
+
+.Reponse {
+  background-color: hsl(54, 100%, 72%);
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: left;
+  border: 1px solid burlywood;
+}
+
+.Progress-container {
+    background-color: hsl(54, 100%, 72%);
+  width: 100%;
+  max-width: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 5px;
+  cursor: default;
+}
+
+.Progress-bar {
+  height: 100%;
+  width: 60%;
+  background-color: orangered;
+}
+
+.Success-question {
+  background-color: #8cfc8f;
+  border-color: green;
+}
+
+.Wrong-question {
+  background-color: rgb(255, 106, 106);
+  border-color: red;
+}
+
+.Final-Result-Container{
+    background-color: rgb(255, 236, 69);
+    border-radius: 20px;
+    padding: 20px 0;
+    margin-bottom: 10px;
+}
+
+.status-of-quize{
+    margin-bottom: 0;
+}
