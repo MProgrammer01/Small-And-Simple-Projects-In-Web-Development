@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="Container">
+      <h1>Expense Tracker</h1>
+      <div class="BalanceIncomeExpenseContainer">
+        <h6>Your Balance</h6>
+        <h2 id="balance"></h2>
+        <div class="IncomeExpenseContainer">
+          <div class="ContainerIncome">
+            <h6>Income</h6>
+            <h3 id="income"></h3>
+          </div>
+          <div class="ContainerExpense">
+            <h6>Expense</h6>
+            <h3 id="expense"></h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="TransactionsAndAddTransaction">
+        <form class="AddTransaction">
+          <h2>Add Transaction</h2>
+          <div>
+            <label for="textDescription">Description</label><br />
+            <input
+              type="text"
+              id="textDescription"
+              placeholder="Enter description..."
+            />
+          </div>
+          <div>
+            <label for="textAmount">Amount</label><br />
+            <input
+              type="number"
+              id="textAmount"
+              placeholder="Enter amount..."
+            />
+          </div>
+          <p>Use negative (-) for expenses</p>
+          <button class="btnAddTransaction" id="btnAddTransaction">
+            Add Transaction
+          </button>
+        </form>
+
+        <div class="Transactions">
+          <h2>Transactions</h2>
+          <div class="ScrollTransaction" id="ScrollTransactionItems">
+            <!-- Transaction items will be dynamically added here -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="scripts/script.js"></script>
+  </body>
+</html>

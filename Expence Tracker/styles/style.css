@@ -1,0 +1,188 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #84c09b;
+}
+
+.Container {
+  width: 60%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Container > h1,
+.BalanceIncomeExpenseContainer > h6,
+.BalanceIncomeExpenseContainer > h2 {
+  text-align: center;
+}
+
+.BalanceIncomeExpenseContainer {
+  margin: 30px;
+  padding: 20px;
+  background: linear-gradient(to right, #a2ceab, #749b42);
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.BalanceIncomeExpenseContainer > h2 {
+  margin-top: 10px;
+  font-size: 2.8rem;
+}
+
+.IncomeExpenseContainer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.IncomeExpenseContainer > div {
+  width: 48%;
+  padding: 15px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.IncomeExpenseContainer > div > h6 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.IncomeExpenseContainer > div > h3 {
+  font-size: 2rem;
+}
+
+.ContainerIncome {
+  color: #089467;
+}
+
+.ContainerExpense {
+  color: #c73224;
+}
+
+.TransactionsAndAddTransaction {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 30px 0;
+}
+
+.TransactionsAndAddTransaction > div,
+.TransactionsAndAddTransaction > form {
+  width: 48%;
+}
+
+.TransactionsAndAddTransaction > div > h2,
+.TransactionsAndAddTransaction > form > h2 {
+  margin-bottom: 15px;
+}
+
+.ScrollTransaction {
+  max-height: 250px;
+  overflow-y: auto;
+  padding: 0px 5px;
+}
+
+.TransactionItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+}
+
+.TransactionDescription{
+  flex: 1;
+}
+
+.DeleteTransaction {
+  background-color: #c73224;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  display: none;
+}
+
+.TransactionItem:hover {
+  transform: scale(1.02);
+  transition: transform 0.2s;
+}
+
+.TransactionItem:hover > .DeleteTransaction{
+  display: block;
+}
+
+.Income {
+  border-right: 5px solid #089467;
+}
+
+.Expense {
+  border-right: 5px solid #c73224;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px 0px 6px;
+}
+
+.btnAddTransaction {
+  width: 100%;
+  padding: 10px;
+  background-color: #089467;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  bottom: 0px;
+}
+
+p {
+  color: red;
+  margin-left: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 1100px) {
+  /* Styles for screens ≤1024px wide */
+  .Container {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 914px) {
+  /* Styles for screens ≤768px wide */
+  .IncomeExpenseContainer > div,
+  .TransactionsAndAddTransaction > div,
+  .TransactionsAndAddTransaction > form {
+    width: 100%;
+  }
+
+  .btnAddTransaction{
+    position: relative;
+    margin-top: 20px;
+  }
+
+  .IncomeExpenseContainer,
+  .TransactionsAndAddTransaction {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
