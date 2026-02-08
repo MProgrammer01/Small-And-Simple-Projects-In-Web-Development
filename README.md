@@ -130,5 +130,5 @@ Small-And-Simple-Project-In-Web-Development/
 ---
 
 <div align="center">
-  <p>صُنع بـ MProgr للتعلم والتطوير</p>
+  <p>صُنع بـ MProgrammer للتعلم والتطوير</p>
 </div>
