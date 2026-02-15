@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="Container">
+        <h1>Registration</h1>
+        <form id="RegistrationForm">
+            
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <p id="requiredUsernameError" class="errorParagraph">Username is required</p>
+            <p id="invalidUsernameError" class="errorParagraph">Username must be at least 3 characters long</p>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <p id="requiredEmailError" class="errorParagraph">Email is required</p>
+            <p id="invalidEmailError" class="errorParagraph">Email is invalid</p>
+            
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <p id="requiredPasswordError" class="errorParagraph">Password is required</p>
+            <p id="invalidPasswordError" class="errorParagraph">Password must be at least 6 characters long</p>
+            
+            <label for="confirm_password">Confirm Password:</label>
+            <input type="password" id="confirm_password" name="confirm_password" required>
+            <p id="requiredConfirmPasswordError" class="errorParagraph">Confirm Password is required</p>
+            <p id="invalidConfirmPasswordError" class="errorParagraph">Passwords do not match</p>
+            
+            <button type="submit" id="registerButton">Register</button>
+        </form>
+    </div>
+    <script type="module" src="scripts.js"></script>
+</body>
+</html>
