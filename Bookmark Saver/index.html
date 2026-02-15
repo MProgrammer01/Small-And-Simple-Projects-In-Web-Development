@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark Saver</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Bookmark Saver</h1>
+        <form action="#">
+            <input type="text" id="bookmark-name" class="bookmark-input" 
+            placeholder="Enter bookmark Name..." required><br>
+            <input type="url" id="bookmark-url" class="bookmark-input" 
+            placeholder="Enter bookmark URL..." required><br>
+            <button id="add-bookmark" class="add-bookmark">Add Bookmark</button>
+        </form>
+        <div class="Bookmark-items" id="Bookmark-items">
+            <div class="bookmark-item">
+                <a href="#" class="bookmark-name">My Github Profile</a>
+                <button class="remove-bookmark" id="remove-bookmark">Remove</button>
+            </div>
+            <div class="Bookmark-item">
+                <h4 class="bookmark-name">My Github Profile</h4>
+                <button class="remove-bookmark" id="remove-bookmark">Remove</button>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
