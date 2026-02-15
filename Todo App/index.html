@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+    <link rel="stylesheet" href="styles.css">
+    <title>Todo App</title>
+</head>
+
+<body>
+    <div class="Container">
+        <div class="Container-Header">
+            <h1><i class="fa-solid fa-circle-check"></i> My Tasks</h1>
+            <p>Friday, Februry 13</p>
+        </div>
+        <div class="Container-Input-BtnAdd">
+            <input type="text" placeholder="What do you need to do?" required id="taskInput">
+            <button class="btnAddTodo" id="btnAddTodo"><i class="fa-solid fa-plus"></i></button>
+        </div>
+        <ul class="Container-Status">
+            <li class="Selected-Status" data-filter="all">All</li>
+            <li data-filter="active">Active</li>
+            <li data-filter="completed">Completed</li>
+        </ul>
+        <div class="Container-Tasks">
+            <div class="No-Task-Yet" id="NoTaskYet">
+                <i class="fa-solid fa-tasks fa-3x"></i>
+                <p id="NoTaskYetMessage">No Task Added Yet</p>
+            </div>
+            <div id="TasksList">
+                <!-- <div class="Task-Item">
+                    <input type="checkbox" class="Checkbox-item">
+                    <label class="Unchecked">reade state management</label>
+                </div> -->
+            </div>
+
+
+        </div>
+        <div class="Container-Footer">
+            <p><span id="lengthOfTasks">0</span> items left</p>
+            <p class="Completed-Status-Selected" id="CompletedStatusSelected">Clear Completed</p>
+        </div>
+    </div>
+    <script type="module" src="scripts.js"></script>
+</body>
+
+</html>
