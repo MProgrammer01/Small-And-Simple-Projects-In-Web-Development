@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="Container">
+        <h1>Password Generator</h1>
+
+        <div class="Cantainer-Random">
+            <p id="randomPasswordOutput">....</p>
+            <i class="fa-solid fa-copy CopyIcon" id="btnCopyPassword"></i>
+        </div>
+
+        <div class="Container-Choices">
+            <div class="Container-IncludeAndCheckBox">
+                <p>Password Length</p>
+                <div class="Container-Rang-Number">
+                    <input type="range" min="6" max="24" value="6" id="rangInput" class="Rang-Input">
+                    <p class="Value-range" id="rangeValue">6</p>
+                </div>
+            </div>
+            <div class="Container-IncludeAndCheckBox">
+                <p>Include Uppercase</p>
+                <input type="checkbox" id="uppercaseCheckboxInput" class="checkboxInput">
+            </div>
+            <div class="Container-IncludeAndCheckBox">
+                <p>Include Lowercase</p>
+                <input type="checkbox" id="lowercaseCheckboxInput" class="checkboxInput">
+            </div>
+            <div class="Container-IncludeAndCheckBox">
+                <p>Include Numbers</p>
+                <input type="checkbox" id="numberscaseCheckboxInput" class="checkboxInput">
+            </div>
+            <div class="Container-IncludeAndCheckBox">
+                <p>Include Symbols</p>
+                <input type="checkbox" id="symbolscaseCheckboxInput" class="checkboxInput">
+            </div>
+        </div>
+
+        <button class="Btn-Generate-Password" id="btnGeneratePassword"><i class="fa-solid fa-key"></i> Generate Password</button>
+        
+        <div class="Container-level">
+            <div class="Container-IncludeAndCheckBox">
+                <p>Password Strength</p>
+                <p class="level" id="levelOfPassword">...</p>
+            </div>
+            <div class="ProgBar-Container">
+                <div class="ProgBar-Fill" id="progBarFill"></div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="scripts.js"></script>
+</body>
+
+</html>

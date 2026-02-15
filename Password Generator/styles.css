@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #3a5077;
+}
+
+.Container {
+  width: 35%;
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: #2C5B6D;
+  font-weight: bolder;
+}
+
+h1 {
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 170px;
+  height: 5px;
+  background-color: #2C5B6D;
+  border-radius: 50px;
+}
+
+.Cantainer-Random {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.CopyIcon {
+  background-color: #E2E8EE;
+  padding: 7px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 20px;
+
+}
+
+.Container-Choices {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.Container-Rang-Number {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.Rang-Input{
+  width: 170px;
+}
+
+.Value-range {
+  background-color: #E2E8EE;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.Container-IncludeAndCheckBox {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px 0px;
+  font-size: 20px;
+
+}
+
+.checkboxInput {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  accent-color: #2C5B6D;
+}
+
+.Btn-Generate-Password {
+  width: 100%;
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+  background-color: #474874;
+  color: white;
+  cursor: pointer;
+}
+
+
+.ProgBar-Container {
+  width: 100%;
+  height: 15px;
+  background: #e0e0e0;
+  border-radius: 15px;
+  border: 2px solid #ccc;
+}
+
+.ProgBar-Fill {
+  height: 100%;
+  background: #3a5077;
+  width: 0%;
+  border-radius: 15px;
+}
