@@ -35,6 +35,13 @@
 </details>
 </div>
 
+<div>
+  <details>
+<summary><strong>❗اشارة</strong></summary>
+<br><strong>لا تنسَ أن تشغل المشروع باستخدام Live Server.</strong> 
+</details>
+</div>
+
 ---
 
 ## 🛠️ التقنيات المستعملة
