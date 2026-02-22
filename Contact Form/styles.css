@@ -1,0 +1,114 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --accent: #49DF7E;
+    --muted: #A2A0A3;
+    --surface: #333;
+    --bg: #1a1a1a;
+    --card: #252525;
+    --ink: #000;
+    --radius: 10px;
+}
+
+body {
+    display: grid;              /* grid + place-items = fewer lines */
+    place-items: center;
+    min-height: 100vh;          /* min prevents content clipping */
+    background: var(--bg);
+    font-family: sans-serif;    /* inherited naturally — not on * */
+}
+
+/* ── Card ─────────────────────────────────── */
+.Container {
+    width: 60%;
+    background: var(--card);
+    border-radius: var(--radius);
+    box-shadow: 0 4px 8px rgb(0 0 0 / .1);  /* modern syntax */
+    font-weight: 700;
+    overflow: hidden;
+    padding: 10px;
+    margin-block: 20px;         /* logical shorthand */
+    color: var(--muted);
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideUp .8s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+@keyframes slideUp {
+    to { opacity: 1; transform: none; }  /* "none" > translateY(0) */
+}
+
+/* ── Typography ───────────────────────────── */
+h1 {
+    color: var(--accent);
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+p { margin-bottom: 20px; }     /* color inherited from .Container */
+
+/* ── Form layout ──────────────────────────── */
+form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.full { grid-column: 1 / -1; } /* spans all cols regardless of count */
+
+/* ── Inputs ───────────────────────────────── */
+.InputContainer {
+    display: flex;
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 10px;
+    border: 2px solid transparent;
+    transition: border-color .3s; /* target ONE prop = GPU friendly */
+}
+
+.InputContainer:focus-within { border-color: var(--accent); }
+
+input,
+textarea {
+    width: 100%;
+    border: 0;
+    outline: 0;
+    background: transparent;    /* parent paints bg — no double layer */
+    color: inherit;             /* inherits from .Container */
+    border-radius: var(--radius);
+}
+
+textarea { padding-top: 8px; resize: none; }
+
+/* ── Icons ────────────────────────────────── */
+i { color: var(--accent); margin: 10px; }
+
+/* ── Button ───────────────────────────────── */
+.btnSendMessage {
+    border-radius: var(--radius);
+    padding: 5px;
+    background: var(--accent);
+    color: var(--ink);
+    font-weight: 700;
+    cursor: pointer;            /* always show pointer, not just :hover */
+}
+
+.btnSendMessage > i { color: inherit; }  /* inherits --ink from parent */
+
+/* ── Info ─────────────────────────────────── */
+.Info-Container { margin-top: 20px; font-size: 15px; }
+
+/* ── Responsive ───────────────────────────── */
+@media (width <= 1000px) { .Container { width: 80%; } }
+
+@media (width <= 600px) {
+    form { grid-template-columns: 1fr; }
+    .full { grid-column: auto; }
+}

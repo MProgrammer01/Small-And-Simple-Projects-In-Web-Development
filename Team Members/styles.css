@@ -1,0 +1,227 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* ── Palette ──────────────────────────── */
+    --accent:       #8b5cf6;
+    --accent-alt:   #6366f1;
+    --accent-grad:  linear-gradient(135deg, var(--accent), var(--accent-alt));
+
+    --text:         #e2e8f0;
+    --text-muted:   #94a3b8;
+    --text-dim:     #cbd5e1;
+
+    /* ── Surfaces ─────────────────────────── */
+    --glass:        rgb(30 41 59 / .6);
+    --glass-border: rgb(71 85 105 / .3);
+    --btn-idle:     rgb(71 85 105 / .4);
+
+    /* ── Shared ───────────────────────────── */
+    --radius: 16px;
+    --speed: .3s;
+}
+
+/* ─── Base ────────────────────────────────── */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+                 Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    min-height: 100vh;
+    padding: 60px 20px;
+    color: #fff;
+}
+
+/* ─── Layout ──────────────────────────────── */
+.container {
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.header h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 16px;             /* color inherited from body */
+    letter-spacing: -0.5px;
+}
+
+.header p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    max-width: 600px;
+    margin-inline: auto;
+}
+
+/* ─── Shared glass panel ──────────────────── */
+.team-card,
+.cta-section {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius);
+}
+
+/* ─── Grid ────────────────────────────────── */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+/* ─── Card ────────────────────────────────── */
+.team-card {
+    overflow: hidden;
+    transition: transform var(--speed), border-color var(--speed),
+                box-shadow var(--speed);     /* explicit props only */
+}
+
+.team-card:hover {
+    transform: translateY(-5px);
+    border-color: rgb(139 92 246 / .5);
+    box-shadow: 0 20px 40px rgb(0 0 0 / .3);
+}
+
+.card-banner {
+    height: 100px;
+    background: var(--accent-grad);
+    position: relative;
+}
+
+.card-avatar {
+    width: 90px;
+    aspect-ratio: 1;                        /* replaces height: 90px */
+    border-radius: 50%;
+    border: 5px solid rgb(30 41 59 / .9);
+    position: absolute;
+    bottom: -45px;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    background: var(--text);
+}
+
+.card-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content {
+    padding: 55px 30px 30px;
+    text-align: center;
+}
+
+.member-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 6px;                     /* white inherited */
+}
+
+.member-role {
+    font-size: .9rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+
+.member-bio {
+    font-size: .9rem;
+    color: var(--text-dim);
+    line-height: 1.7;
+    margin-bottom: 25px;
+    min-height: 60px;
+}
+
+/* ─── Social ──────────────────────────────── */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.social-link {
+    width: 36px;
+    aspect-ratio: 1;
+    background: var(--btn-idle);
+    border-radius: 8px;
+    display: grid;
+    place-items: center;                    /* replaces flex + 2 props */
+    transition: background var(--speed), transform var(--speed);
+    text-decoration: none;
+}
+
+.social-link:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+}
+
+.social-link i {
+    font-size: 18px;
+    color: var(--text);
+}
+
+/* ─── CTA ─────────────────────────────────── */
+.cta-section {
+    max-width: 700px;
+    margin-inline: auto;
+    padding: 50px 40px;
+    text-align: center;
+    border-top: 5px solid var(--accent);
+}
+
+.cta-section h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.cta-section p {
+    color: var(--text-muted);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 16px 36px;
+    background: var(--accent-grad);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: transform var(--speed), box-shadow var(--speed);
+    box-shadow: 0 10px 30px rgb(139 92 246 / .3);
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgb(139 92 246 / .4);
+}
+
+/* ─── Avatar placeholder ──────────────────── */
+.avatar-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--text-muted), #64748b);
+    display: grid;
+    place-items: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* ─── Responsive ──────────────────────────── */
+@media (width <= 768px) {
+    .header h1          { font-size: 2rem; }
+    .team-grid          { grid-template-columns: 1fr; }
+    .cta-section        { padding: 40px 30px; }
+    .cta-section h2     { font-size: 1.5rem; }
+}
