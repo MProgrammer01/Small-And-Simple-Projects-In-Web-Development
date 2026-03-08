@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="converter-card">
+            <h1 class="title">Currency Converter</h1>
+            
+            <div class="converter-form">
+                <!-- Amount Input -->
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input 
+                        type="number" 
+                        id="amount" 
+                        class="input-field" 
+                        placeholder="Enter amount"
+                        value="150"
+                        min="0"
+                        step="0.01"
+                    >
+                </div>
+
+                <!-- From Currency -->
+                <div class="form-group">
+                    <label for="fromCurrency">From</label>
+                    <select id="fromCurrency" class="select-field">
+                        <option value="">Loading currencies...</option>
+                    </select>
+                </div>
+
+                <!-- Swap Button -->
+                <div class="swap-container">
+                    <button id="swapBtn" class="swap-btn" title="Swap currencies">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 16V4M7 4L3 8M7 4l4 4M17 8v12M17 20l4-4M17 20l-4-4"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- To Currency -->
+                <div class="form-group">
+                    <label for="toCurrency">To</label>
+                    <select id="toCurrency" class="select-field">
+                        <option value="">Loading currencies...</option>
+                    </select>
+                </div>
+
+                <!-- Convert Button -->
+                <button id="convertBtn" class="convert-btn">Convert</button>
+
+                <!-- Result Display -->
+                <div id="result" class="result hidden">
+                    <p id="resultText"></p>
+                </div>
+
+                <!-- Loading Indicator -->
+                <div id="loading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Converting...</p>
+                </div>
+
+                <!-- Error Message -->
+                <div id="error" class="error-message hidden">
+                    <p id="errorText">Something went wrong. Please try again.</p>
+                </div>
+
+                <!-- Exchange Rate Info -->
+                <div id="rateInfo" class="rate-info hidden">
+                    <p id="rateText"></p>
+                    <p class="last-update">Last updated: <span id="lastUpdate"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

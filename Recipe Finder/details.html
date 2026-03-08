@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details - Recipe Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">🍴</span>
+                <h1>Recipe Finder</h1>
+            </div>
+            <a href="index.html" class="back-btn">← Back to Search</a>
+        </header>
+
+        <!-- Loading Spinner -->
+        <div id="loading" class="loading">
+            <div class="spinner"></div>
+            <p>Loading recipe details...</p>
+        </div>
+
+        <!-- Recipe Details -->
+        <div id="recipeDetails" class="recipe-details hidden">
+            <div class="details-header">
+                <img id="mealImage" src="" alt="" class="detail-image">
+                <div class="details-info">
+                    <h2 id="mealTitle" class="detail-title"></h2>
+                    <div class="detail-meta">
+                        <span id="mealCategory" class="badge"></span>
+                        <span id="mealArea" class="badge"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="details-content">
+                <div class="ingredients-section">
+                    <h3>Ingredients</h3>
+                    <ul id="ingredientsList" class="ingredients-list">
+                        <!-- Ingredients will be dynamically inserted -->
+                    </ul>
+                </div>
+
+                <div class="instructions-section">
+                    <h3>Instructions</h3>
+                    <p id="instructions" class="instructions-text"></p>
+                </div>
+
+                <div class="extra-info">
+                    <div class="info-item" id="tagsSection">
+                        <h4>Tags</h4>
+                        <div id="tags" class="tags-container"></div>
+                    </div>
+                    <div class="info-item" id="videoSection">
+                        <h4>Video Tutorial</h4>
+                        <a id="videoLink" href="" target="_blank" class="video-btn">Watch on YouTube</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="details.js"></script>
+</body>
+</html>

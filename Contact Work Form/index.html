@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section - Contact Info -->
+        <div class="contact-info">
+            <div class="badge">Contact</div>
+            <h1 class="title">Let's work together</h1>
+            <p class="description">Have a project in mind? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</p>
+
+            <!-- Contact Details -->
+            <div class="contact-details">
+                <div class="detail-item">
+                    <i class="fas fa-envelope"></i>
+                    <div class="detail-text">
+                        <div class="detail-label">EMAIL</div>
+                        <div class="detail-value">hello@example.com</div>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <i class="fas fa-phone"></i>
+                    <div class="detail-text">
+                        <div class="detail-label">PHONE</div>
+                        <div class="detail-value">+1 (234) 567-890</div>
+                    </div>
+                </div>
+
+                <div class="detail-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div class="detail-text">
+                        <div class="detail-label">OFFICE</div>
+                        <div class="detail-value">123 Street, San Francisco, CA</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Social Links -->
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-x-twitter"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+
+        <!-- Right Section - Contact Form -->
+        <div class="form-section">
+            <h2 class="form-title">Send a message</h2>
+            
+            <form class="contact-form" id="contactForm">
+                <!-- Name Fields -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First name*</label>
+                        <input 
+                            type="text" 
+                            id="firstName" 
+                            name="firstName"
+                            placeholder="John"
+                            required
+                        >
+                        <span class="error-message"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last name*</label>
+                        <input 
+                            type="text" 
+                            id="lastName" 
+                            name="lastName"
+                            placeholder="Doe"
+                            required
+                        >
+                        <span class="error-message"></span>
+                    </div>
+                </div>
+
+                <!-- Email Field -->
+                <div class="form-group">
+                    <label for="email">Email*</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email"
+                        placeholder="john@example.com"
+                        required
+                    >
+                    <span class="error-message"></span>
+                </div>
+
+                <!-- Subject Field -->
+                <div class="form-group">
+                    <label for="subject">Subject*</label>
+                    <select id="subject" name="subject" required>
+                        <option value="" disabled selected>Select a topic</option>
+                        <option value="general">General Inquiry</option>
+                        <option value="project">Project Discussion</option>
+                        <option value="partnership">Partnership</option>
+                        <option value="support">Support</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <span class="error-message"></span>
+                </div>
+
+                <!-- Message Field -->
+                <div class="form-group">
+                    <label for="message">Message*</label>
+                    <textarea 
+                        id="message" 
+                        name="message"
+                        rows="5"
+                        placeholder="Tell us about your project..."
+                        required
+                    ></textarea>
+                    <span class="error-message"></span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">
+                    Send Message
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </form>
+
+            <!-- Success Message -->
+            <div class="success-modal" id="successModal">
+                <div class="success-content">
+                    <div class="success-icon">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <h3 class="success-title">Message sent!</h3>
+                    <p class="success-text">Thanks for reaching out. We'll get back to you within 24 hours.</p>
+                    <button class="send-another-btn" id="sendAnotherBtn">Send another message</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
