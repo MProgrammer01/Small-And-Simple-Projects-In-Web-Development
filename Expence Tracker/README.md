@@ -1,1 +1,2 @@
-<img width="380" height="256" alt="expense-tracker" src="https://github.com/user-attachments/assets/6cb5cedb-031c-46d8-98a7-55817c6086ce" />
+
+<img width="868" height="590" alt="expense-tracker" src="https://github.com/user-attachments/assets/dc606b92-0ed1-412e-a439-54686e85bc64" />
