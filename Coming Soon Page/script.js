@@ -6,7 +6,7 @@ const notifyBtn = emailForm.querySelector('.notify-btn');
 
 // Set the launch date (change this to your desired date)
 // Format: 'Month Day, Year Hour:Minute:Second'
-const launchDate = new Date('March 10, 2026 23:59:59').getTime();
+const launchDate = new Date('April 10, 2026 23:59:59').getTime();
 
 // Update countdown every second
 const countdownInterval = setInterval(updateCountdown, 1000);
