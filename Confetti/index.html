@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Subscription</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <div class="container">
+        <!-- Newsletter Card -->
+        <div class="newsletter-card" id="newsletterCard">
+            <h2 class="title">Join Our Newsletter</h2>
+            <p class="subtitle">Get weekly updates straight to your inbox</p>
+
+            <form class="newsletter-form" id="newsletterForm">
+                <input 
+                    type="email" 
+                    class="email-input" 
+                    id="emailInput"
+                    placeholder="Enter your email"
+                >
+                <button type="submit" class="subscribe-btn">Subscribe</button>
+            </form>
+        </div>
+
+        <!-- Success Card (Hidden) -->
+        <div class="success-card hidden" id="successCard">
+            <div class="celebration-icon">
+                🎉
+            </div>
+            <h2 class="success-title">You're in! 🎊</h2>
+            <p class="success-text">Thanks for joining! Check your inbox for confirmation.</p>
+            <button class="another-btn" id="anotherBtn">Subscribe Another</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

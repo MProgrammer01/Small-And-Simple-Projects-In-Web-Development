@@ -1,0 +1,277 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #1a1a1a;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Quote Card */
+.quote-card {
+    background: rgba(40, 40, 40, 0.8);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 50px 45px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    position: relative;
+    animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Quote Icon */
+.quote-icon {
+    margin-bottom: 28px;
+}
+
+.emoji {
+    font-size: 3rem;
+    display: inline-block;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Quote Text */
+.quote-text {
+    font-size: 1.35rem;
+    line-height: 1.7;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: 400;
+    transition: all 0.4s ease;
+}
+
+/* Quote Author */
+.quote-author {
+    font-size: 0.95rem;
+    color: #9ca3af;
+    margin-bottom: 40px;
+    font-style: italic;
+    transition: all 0.4s ease;
+}
+
+/* Button Group */
+.button-group {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+
+.btn {
+    padding: 12px 28px;
+    border: none;
+    border-radius: 25px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.4s ease, height 0.4s ease;
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Copy Button */
+.btn-copy {
+    background: transparent;
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-copy:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-copy:active {
+    transform: translateY(0);
+}
+
+/* New Quote Button */
+.btn-new-quote {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
+}
+
+.btn-new-quote:hover {
+    background: linear-gradient(135deg, #059669 0%, #047857 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+}
+
+.btn-new-quote:active {
+    transform: translateY(0);
+}
+
+/* Loading State */
+.btn-new-quote.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.btn-new-quote.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 16px;
+    height: 16px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: #fff;
+    border-radius: 50%;
+    animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Copy Success Message */
+.copy-message {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(16, 185, 129, 0.15);
+    border: 1px solid rgba(16, 185, 129, 0.3);
+    border-radius: 20px;
+    color: #6ee7b7;
+    font-size: 0.85rem;
+    font-weight: 600;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.copy-message.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(10px);
+}
+
+.copy-message svg {
+    color: #10b981;
+}
+
+/* Quote Change Animation */
+.quote-text.fade-out,
+.quote-author.fade-out {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+
+/* Focus states for accessibility */
+.btn:focus {
+    outline: 2px solid rgba(16, 185, 129, 0.5);
+    outline-offset: 2px;
+}
+
+/* Smooth transitions */
+.quote-card * {
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .quote-card {
+        padding: 40px 30px;
+    }
+
+    .emoji {
+        font-size: 2.5rem;
+    }
+
+    .quote-text {
+        font-size: 1.15rem;
+        line-height: 1.6;
+    }
+
+    .quote-author {
+        font-size: 0.9rem;
+        margin-bottom: 35px;
+    }
+
+    .button-group {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        padding: 13px 24px;
+    }
+
+    .copy-message {
+        bottom: 15px;
+        font-size: 0.8rem;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .quote-card {
+        padding: 35px 25px;
+    }
+
+    .quote-text {
+        font-size: 1.05rem;
+    }
+}
