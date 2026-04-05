@@ -1,0 +1,117 @@
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     min-height: 100vh;
+     background-color: #1a1a1a;
+     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ }
+
+ .gallery-container {
+     display: flex;
+     width: 90vw;
+     max-width: 1200px;
+     height: 80vh;
+     min-height: 500px;
+     gap: 12px;
+     padding: 20px;
+ }
+
+ .gallery-panel {
+     position: relative;
+     border-radius: 16px;
+     overflow: hidden;
+     cursor: pointer;
+     flex: 1;
+     transition: flex 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+     min-width: 60px;
+ }
+
+ .gallery-panel.expanded {
+     flex: 5;
+ }
+
+ .gallery-panel img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     display: block;
+     transition: transform 0.6s ease, filter 0.6s ease;
+ }
+
+ /* ── darken collapsed images ── */
+ .gallery-panel:not(.expanded) img {
+     filter: brightness(0.6);
+ }
+
+ .gallery-panel:hover:not(.expanded) img {
+     filter: brightness(0.8);
+     transform: scale(1.05);
+ }
+
+ .gallery-panel.expanded:hover img {
+     transform: scale(1.02);
+ }
+
+ /* ── label overlay ── */
+ .panel-label {
+     position: absolute;
+     bottom: 24px;
+     left: 24px;
+     color: #fff;
+     font-size: 1.1rem;
+     font-weight: 600;
+     letter-spacing: 0.5px;
+     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+     opacity: 0;
+     transform: translateY(12px);
+     transition: opacity 0.4s ease 0.2s,
+         transform 0.4s ease 0.2s;
+     pointer-events: none;
+ }
+
+ .gallery-panel.expanded .panel-label {
+     opacity: 1;
+     transform: translateY(0);
+ }
+
+ /* ── side panels: show only when collapsed ── */
+ .side-panel-label {
+     position: absolute;
+     bottom: 50%;
+     left: 50%;
+     transform: translateX(-50%) rotate(-90deg) translateY(-50%);
+     color: rgba(255, 255, 255, 0.7);
+     font-size: 0.85rem;
+     font-weight: 500;
+     letter-spacing: 1.5px;
+     text-transform: uppercase;
+     white-space: nowrap;
+     transition: opacity 0.3s ease;
+ }
+
+ .gallery-panel.expanded .side-panel-label {
+     opacity: 0;
+ }
+
+ @media (max-width: 700px) {
+     .gallery-container {
+         flex-direction: column;
+         /* هنا بدلنا الاتجاه لعمودي */
+         width: 95vw;
+         height: 90vh;
+         padding: 10px;
+         gap: 10px;
+     }
+
+     /* فالهاتف، النص اللي كان مقاد راسو غادي يرجع عادي */
+     .side-panel-label {
+         transform: translateX(-50%) translateY(50%) rotate(0deg);
+     }
+ }
