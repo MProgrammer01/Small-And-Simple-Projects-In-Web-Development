@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a1a1a;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* ── Header ─ */
+.header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.header h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.header p {
+    font-size: 0.9rem;
+    color: #888;
+    margin-bottom: 20px;
+}
+
+/* ── Shuffle Button ── */
+.shuffle-btn {
+    padding: 10px 32px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    background: #2d2d2d;
+    border: 2px solid #444;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.shuffle-btn:hover {
+    background: #4dabf7;
+    border-color: #4dabf7;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(77, 171, 247, 0.3);
+}
+
+.shuffle-btn:active {
+    transform: translateY(0);
+}
+
+/* ── Gallery Grid ── */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    max-width: 600px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.gallery-item {
+    position: relative;
+    aspect-ratio: 4 / 3;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.4s ease;
+}
+
+/* ── Animation class for shuffle ── */
+.gallery-item.shuffling {
+    animation: shuffleFade 0.5s ease;
+}
+
+@keyframes shuffleFade {
+    0% {
+        opacity: 0.3;
+        transform: scale(0.92) rotate(-2deg);
+    }
+
+    50% {
+        opacity: 0.7;
+        transform: scale(0.96) rotate(1deg);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* ── Shuffle counter ── */
+.shuffle-count {
+    margin-top: 25px;
+    font-size: 0.8rem;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 500px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .header h1 {
+        font-size: 1.2rem;
+    }
+}

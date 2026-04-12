@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="timer-container">
+        <!-- Title -->
+        <h1>⏰ Countdown Timer ⏰</h1>
+        <p class="subtitle">Set a date and watch the countdown</p>
+
+        <!-- Input Section -->
+        <div class="input-section">
+            <label for="targetDate">Select Target Date 👇</label>
+            <input type="datetime-local" id="targetDate" />
+        </div>
+
+        <!-- Start Button -->
+        <button class="start-btn" id="startBtn">Start Countdown</button>
+
+        <!-- Countdown Display -->
+        <div class="countdown-display" id="countdownDisplay">
+            <div class="time-block">
+                <span class="time-value" id="days">00</span>
+                <span class="time-label">Days</span>
+            </div>
+            <span class="separator">:</span>
+            <div class="time-block">
+                <span class="time-value" id="hours">00</span>
+                <span class="time-label">Hours</span>
+            </div>
+            <span class="separator">:</span>
+            <div class="time-block">
+                <span class="time-value" id="minutes">00</span>
+                <span class="time-label">Minutes</span>
+            </div>
+            <span class="separator">:</span>
+            <div class="time-block">
+                <span class="time-value" id="seconds">00</span>
+                <span class="time-label">Seconds</span>
+            </div>
+        </div>
+
+        <!-- Finished Message -->
+        <div class="finished-message" id="finishedMessage">
+            <span class="emoji">🎉</span>
+            <p>Countdown Finished!</p>
+            <button class="reset-btn" id="resetBtn">Start New Countdown</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
