@@ -1,2 +1,1 @@
-
-<img width="1860" height="851" alt="scroll-progress" src="https://github.com/user-attachments/assets/aae37ed5-2b36-41ec-b6c5-e2d41f8f41ac" />
+![Screenshot 2026-04-12 143910](https://github.com/user-attachments/assets/d86818c2-a0ac-434f-90d2-8d61b3bf57f1)
