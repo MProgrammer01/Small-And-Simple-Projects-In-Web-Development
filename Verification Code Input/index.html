@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification Code</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="container">
+        <!-- Input State -->
+        <div class="input-state" id="inputState">
+            <h1>Enter Verification Code</h1>
+            <p class="subtitle">We've sent a 6-digit code to your device</p>
+
+            <div class="code-inputs" id="codeInputs">
+                <input type="text" maxlength="1" data-index="0" />
+                <input type="text" maxlength="1" data-index="1" />
+                <input type="text" maxlength="1" data-index="2" />
+                <input type="text" maxlength="1" data-index="3" />
+                <input type="text" maxlength="1" data-index="4" />
+                <input type="text" maxlength="1" data-index="5" />
+            </div>
+
+            <div class="resend-section">
+                <button class="resend-link" id="resendBtn">Resend Code</button>
+                <div class="resend-timer" id="resendTimer"></div>
+            </div>
+        </div>
+
+        <!-- Success State -->
+        <div class="success-state" id="successState">
+            <div class="checkmark-container">
+                <div class="checkmark"></div>
+            </div>
+            <h2>Code Verified!</h2>
+            <p>Your verification code has been successfully verified.</p>
+            <button class="continue-btn" id="continueBtn">Continue</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

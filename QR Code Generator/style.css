@@ -1,0 +1,248 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #0f172a;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* ── Card Container ── */
+        .card {
+            background: #1e293b;
+            border-radius: 16px;
+            padding: 32px;
+            max-width: 420px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        /* ── Title ── */
+        .card h1 {
+            color: #ffffff;
+            font-size: 1.4rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        /* ── Textarea ── */
+        .input-section {
+            margin-bottom: 20px;
+        }
+
+        .input-section textarea {
+            width: 100%;
+            padding: 16px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 12px;
+            color: #e2e8f0;
+            font-size: 0.95rem;
+            font-family: inherit;
+            resize: vertical;
+            min-height: 100px;
+            outline: none;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .input-section textarea::placeholder {
+            color: #64748b;
+        }
+
+        .input-section textarea:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+
+        /* ── Size Selector ── */
+        .options-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .options-row label {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .size-select {
+            padding: 8px 14px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            color: #e2e8f0;
+            font-size: 0.85rem;
+            outline: none;
+            cursor: pointer;
+            transition: border-color 0.3s ease;
+        }
+
+        .size-select:focus {
+            border-color: #3b82f6;
+        }
+
+        .size-select option {
+            background: #1e293b;
+        }
+
+        /* ── Generate Button ── */
+        .generate-btn {
+            width: 100%;
+            padding: 14px;
+            background: #3b82f6;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+        }
+
+        .generate-btn:hover {
+            background: #2563eb;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
+
+        .generate-btn:active {
+            transform: translateY(0);
+        }
+
+        /* ── QR Code Display ── */
+        .qr-result {
+            display: none;
+            text-align: center;
+            margin-top: 24px;
+            animation: fadeInUp 0.5s ease;
+        }
+
+        .qr-result.active {
+            display: block;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .qr-code-wrapper {
+            display: inline-block;
+            background: #ffffff;
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .qr-code-wrapper img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* ─ Download Button ── */
+        .download-btn {
+            padding: 10px 24px;
+            background: #334155;
+            color: #e2e8f0;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-btn:hover {
+            background: #475569;
+            transform: translateY(-1px);
+        }
+
+        .download-btn:active {
+            transform: translateY(0);
+        }
+
+        /* ── Error Message ── */
+        .error-msg {
+            color: #ef4444;
+            font-size: 0.85rem;
+            text-align: center;
+            margin-top: 12px;
+            display: none;
+        }
+
+        .error-msg.active {
+            display: block;
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        /* ── Loading Spinner ── */
+        .loading {
+            display: none;
+            text-align: center;
+            margin-top: 24px;
+        }
+
+        .loading.active {
+            display: block;
+        }
+
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid #334155;
+            border-top-color: #3b82f6;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin: 0 auto;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* ─ Responsive ── */
+        @media (max-width: 480px) {
+            .card {
+                padding: 24px 18px;
+            }
+
+            .card h1 {
+                font-size: 1.2rem;
+            }
+        }

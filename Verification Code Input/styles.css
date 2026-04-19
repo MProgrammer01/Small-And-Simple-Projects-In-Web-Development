@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* ── Main Container ── */
+.container {
+    background: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+/* ── Title ── */
+.container h1 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* ── Input Boxes ── */
+.code-inputs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.code-inputs input {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1a1a2e;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.code-inputs input:focus {
+    border-color: #ff8c42;
+    box-shadow: 0 0 0 4px rgba(255, 140, 66, 0.1);
+    transform: translateY(-2px);
+}
+
+.code-inputs input.filled {
+    border-color: #ff8c42;
+    background: #fff5f0;
+}
+
+.code-inputs input.error {
+    border-color: #e74c3c;
+    animation: shake 0.5s ease;
+}
+
+@keyframes shake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-8px);
+    }
+
+    75% {
+        transform: translateX(8px);
+    }
+}
+
+/* ── Resend Link ── */
+.resend-section {
+    margin-top: 20px;
+}
+
+.resend-link {
+    color: #ff8c42;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: none;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.resend-link:hover {
+    color: #ff6b35;
+    text-decoration: underline;
+}
+
+.resend-link:disabled {
+    color: #999;
+    cursor: not-allowed;
+    text-decoration: none;
+}
+
+.resend-timer {
+    color: #999;
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+/* ── Success State ── */
+.success-state {
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.success-state.active {
+    display: block;
+}
+
+.input-state.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Checkmark Animation ── */
+.checkmark-container {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    animation: scaleIn 0.5s ease;
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.checkmark {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #fff;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    animation: checkmarkDraw 0.5s ease 0.3s forwards;
+    opacity: 0;
+}
+
+@keyframes checkmarkDraw {
+    to {
+        opacity: 1;
+        height: 20px;
+    }
+}
+
+.success-state h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1a1a2e;
+    margin-bottom: 10px;
+}
+
+.success-state p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+/* ── Continue Button ── */
+.continue-btn {
+    background: linear-gradient(135deg, #ff8c42 0%, #ff6b35 100%);
+    color: #fff;
+    border: none;
+    padding: 14px 40px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 140, 66, 0.4);
+}
+
+.continue-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 140, 66, 0.5);
+}
+
+.continue-btn:active {
+    transform: translateY(0);
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    .code-inputs input {
+        width: 42px;
+        height: 42px;
+        font-size: 1.2rem;
+    }
+
+    .checkmark-container {
+        width: 70px;
+        height: 70px;
+    }
+}
