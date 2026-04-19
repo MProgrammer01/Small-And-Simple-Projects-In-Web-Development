@@ -1,2 +1,2 @@
+<img width="674" height="855" alt="Screenshot 2026-04-19 152709" src="https://github.com/user-attachments/assets/a03bfa93-a4f0-4a9f-b087-aa014258072a" />
 
-<img width="847" height="815" alt="pricing-card" src="https://github.com/user-attachments/assets/de0dd5ab-957d-4648-9375-c8f5906130d8" />
